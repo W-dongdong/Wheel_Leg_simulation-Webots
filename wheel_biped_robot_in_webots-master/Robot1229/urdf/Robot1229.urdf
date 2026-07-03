@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Robot1229">
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="-0.029083 0.03027 0.039855"
+        rpy="0 0 0" />
+      <mass
+        value="1.6228" />
+      <inertia
+        ixx="0.0087935"
+        ixy="-4.8714E-05"
+        ixz="8.4977E-05"
+        iyy="0.0078988"
+        iyz="-2.9302E-08"
+        izz="0.014302" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/body.STL" />
+      </geometry>
+      <material
+        name="body_m">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="gyro">
+    <inertial>
+      <origin
+        xyz="-0.027538 -0.0184 -0.011656"
+        rpy="0 0 0" />
+      <mass
+        value="0.03512" />
+      <inertia
+        ixx="5.5419E-06"
+        ixy="2.9336E-19"
+        ixz="1.2816E-08"
+        iyy="7.1538E-06"
+        iyz="-2.0153E-21"
+        izz="9.4692E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/gyro.STL" />
+      </geometry>
+      <material
+        name="gyro_m">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/gyro.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_gryo"
+    type="fixed">
+    <origin
+      xyz="-0.0184 -0.0275 0.003"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="body" />
+    <child
+      link="gyro" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l11">
+    <inertial>
+      <origin
+        xyz="0.10377 6.8831E-05 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.16816" />
+      <inertia
+        ixx="4.8839E-05"
+        ixy="4.368E-08"
+        ixz="-6.3145E-20"
+        iyy="0.0008911"
+        iyz="1.3366E-20"
+        izz="0.00093714" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l11.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_l11"
+    type="revolute">
+    <origin
+      xyz="0.2055 -0.25074 0.13814"
+      rpy="-1.5708 0.30543 1.5708" />
+    <parent
+      link="body" />
+    <child
+      link="l11" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="l12">
+    <inertial>
+      <origin
+        xyz="0.14588 -8.0248E-14 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.22236" />
+      <inertia
+        ixx="6.8817E-05"
+        ixy="3.9056E-06"
+        ixz="-3.6314E-18"
+        iyy="0.0021664"
+        iyz="-3.1274E-20"
+        izz="0.0022315" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l12.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_l12"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 0 0.27575" />
+    <parent
+      link="l11" />
+    <child
+      link="l12" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_l">
+    <inertial>
+      <origin
+        xyz="1.6012E-06 -2.5451E-05 0.02439"
+        rpy="0 0 0" />
+      <mass
+        value="1.4642" />
+      <inertia
+        ixx="0.0026068"
+        ixy="-4.4894E-07"
+        ixz="-1.393E-07"
+        iyy="0.0026091"
+        iyz="8.8637E-07"
+        izz="0.0048597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/wheel_l.STL" />
+      </geometry>
+      <material
+        name="wheel_m">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/wheel_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wl"
+    type="revolute">
+    <origin
+      xyz="0.3 0 0.067"
+      rpy="-3.1416 0 -1.4149" />
+    <parent
+      link="l12" />
+    <child
+      link="wheel_l" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="l21">
+    <inertial>
+      <origin
+        xyz="-0.096226 6.8831E-05 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.16816" />
+      <inertia
+        ixx="4.8839E-05"
+        ixy="4.368E-08"
+        ixz="7.1784E-19"
+        iyy="0.0008911"
+        iyz="1.5718E-21"
+        izz="0.00093714" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l21.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_l21"
+    type="revolute">
+    <origin
+      xyz="0.2055 0.06 0.078"
+      rpy="1.5708 0.30543 -1.5708" />
+    <parent
+      link="body" />
+    <child
+      link="l21" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="l22">
+    <inertial>
+      <origin
+        xyz="0.14588 -2.7311E-14 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.22236" />
+      <inertia
+        ixx="6.8817E-05"
+        ixy="3.9056E-06"
+        ixz="1.4725E-18"
+        iyy="0.0021664"
+        iyz="-1.0487E-19"
+        izz="0.0022315" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l22.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/l22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_l22"
+    type="revolute">
+    <origin
+      xyz="-0.2 0 0.01"
+      rpy="3.1416 0 -0.27575" />
+    <parent
+      link="l21" />
+    <child
+      link="l22" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="r11">
+    <inertial>
+      <origin
+        xyz="0.10377 6.8831E-05 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.16816" />
+      <inertia
+        ixx="4.8839E-05"
+        ixy="4.368E-08"
+        ixz="2.6108E-19"
+        iyy="0.0008911"
+        iyz="1.3938E-20"
+        izz="0.00093714" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r11.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_r11"
+    type="revolute">
+    <origin
+      xyz="-0.1955 -0.25074 0.13814"
+      rpy="-1.5708 0.30543 1.5708" />
+    <parent
+      link="body" />
+    <child
+      link="r11" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="r12">
+    <inertial>
+      <origin
+        xyz="0.14588 1.6591E-14 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.22236" />
+      <inertia
+        ixx="6.8817E-05"
+        ixy="3.9056E-06"
+        ixz="-5.8646E-19"
+        iyy="0.0021664"
+        iyz="3.266E-21"
+        izz="0.0022315" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r12.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_r12"
+    type="revolute">
+    <origin
+      xyz="0 0 0.01"
+      rpy="0 0 0.27575" />
+    <parent
+      link="r11" />
+    <child
+      link="r12" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wheel_r">
+    <inertial>
+      <origin
+        xyz="1.6012E-06 -2.5451E-05 0.02439"
+        rpy="0 0 0" />
+      <mass
+        value="1.4642" />
+      <inertia
+        ixx="0.0026068"
+        ixy="-4.4894E-07"
+        ixz="-1.393E-07"
+        iyy="0.0026091"
+        iyz="8.8637E-07"
+        izz="0.0048597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/wheel_r.STL" />
+      </geometry>
+      <material
+        name="wheel_m">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/wheel_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wr"
+    type="fixed">
+    <origin
+      xyz="0.3 0 0.067"
+      rpy="-3.1416 0 -1.2984" />
+    <parent
+      link="r12" />
+    <child
+      link="wheel_r" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r21">
+    <inertial>
+      <origin
+        xyz="-0.096226 6.8831E-05 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.16816" />
+      <inertia
+        ixx="4.8839E-05"
+        ixy="4.368E-08"
+        ixz="5.3189E-19"
+        iyy="0.0008911"
+        iyz="-3.4645E-20"
+        izz="0.00093714" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r21.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_r21"
+    type="revolute">
+    <origin
+      xyz="-0.2055 0.06 0.078"
+      rpy="-1.5708 0.30543 -1.5708" />
+    <parent
+      link="body" />
+    <child
+      link="r21" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="r22">
+    <inertial>
+      <origin
+        xyz="0.14588 2.8845E-14 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.22236" />
+      <inertia
+        ixx="6.8817E-05"
+        ixy="3.9056E-06"
+        ixz="-2.3072E-18"
+        iyy="0.0021664"
+        iyz="-7.7437E-20"
+        izz="0.0022315" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r22.STL" />
+      </geometry>
+      <material
+        name="carbon">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/tdt/wewebot/Robot1229/meshes/r22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_r22"
+    type="revolute">
+    <origin
+      xyz="-0.2 0 0.01"
+      rpy="3.1416 0 0.27575" />
+    <parent
+      link="r21" />
+    <child
+      link="r22" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

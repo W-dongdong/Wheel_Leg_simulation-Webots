@@ -1,0 +1,448 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the Robot1229
+# Extracted from: F:\BaiduSyncdisk\personal\wewebot\robot1229\urdf\robot1229.urdf
+
+PROTO Robot1229 [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "Robot1229"  # Is `Robot.name`.
+  field  SFString    controller      "void"       # Is `Robot.controller`.
+  field  MFString    controllerArgs  []           # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""           # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE        # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE         # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE        # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF body_m PBRAppearance {
+          roughness 1.000000
+          metalness 0
+        }
+        geometry DEF body Mesh {
+          url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/body.STL"
+        }
+      }
+      Solid {
+        translation -0.018400 -0.027500 0.003000
+        rotation 0.707105 -0.707108 0.000003 3.141598
+        children [
+          Shape {
+            appearance DEF gyro_m PBRAppearance {
+              baseColor 0.792160 0.819610 0.933330
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF gyro Mesh {
+              url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/gyro.STL"
+            }
+          }
+        ]
+        name "gyro"
+        boundingObject USE gyro
+        physics Physics {
+          density -1
+          mass 0.035120
+          centerOfMass [ -0.027538 -0.018400 -0.011656 ]
+          inertiaMatrix [
+            5.541900e-06 7.153800e-06 9.469200e-06
+            2.933600e-19 1.281600e-08 -2.015300e-21
+          ]
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -1.000000 -0.000005 -0.000004
+          anchor 0.205500 -0.250740 0.138140
+        }
+        device [
+          RotationalMotor {
+            name "joint_l11"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "joint_l11_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.205500 -0.250740 0.138140
+          rotation -0.627748 -0.460288 0.627748 2.278848
+          children [
+            Shape {
+              appearance DEF carbon PBRAppearance {
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF l11 Mesh {
+                url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/l11.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000002 -0.000007 1.000000
+              }
+              device [
+                RotationalMotor {
+                  name "joint_l12"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "joint_l12_sensor"
+                }
+              ]
+              endPoint Solid {
+                rotation 0.990510 0.137439 -0.000001 3.141600
+                children [
+                  Shape {
+                    appearance USE carbon
+                    geometry DEF l12 Mesh {
+                      url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/l12.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000007 0.000001 1.000000
+                      anchor 0.300000 0.000000 0.067000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "joint_wl"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "joint_wl_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.300000 0.000000 0.067000
+                      rotation -0.760022 0.649898 0.000002 3.141598
+                      children [
+                        Shape {
+                          appearance DEF wheel_m PBRAppearance {
+                            baseColor 0.000000 0.000000 0.000000
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF wheel_l Mesh {
+                            url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/wheel_l.STL"
+                          }
+                        }
+                      ]
+                      name "wheel_l"
+                      boundingObject USE wheel_l
+                      physics Physics {
+                        density -1
+                        mass 1.464200
+                        centerOfMass [ 0.000002 -0.000025 0.024390 ]
+                        inertiaMatrix [
+                          2.606800e-03 2.609100e-03 4.859700e-03
+                          -4.489400e-07 -1.393000e-07 8.863700e-07
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "l12"
+                boundingObject USE l12
+                physics Physics {
+                  density -1
+                  mass 0.222360
+                  centerOfMass [ 0.145880 -0.000000 0.005000 ]
+                  inertiaMatrix [
+                    6.881700e-05 2.166400e-03 2.231500e-03
+                    3.905600e-06 -3.631400e-18 -3.127400e-20
+                  ]
+                }
+              }
+            }
+          ]
+          name "l11"
+          boundingObject USE l11
+          physics Physics {
+            density -1
+            mass 0.168160
+            centerOfMass [ 0.103770 0.000069 0.005000 ]
+            inertiaMatrix [
+              4.883900e-05 8.911000e-04 9.371400e-04
+              4.368000e-08 -6.314500e-20 1.336600e-20
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -1.000000 0.000005 -0.000004
+          anchor 0.205500 0.060000 0.078000
+        }
+        device [
+          RotationalMotor {
+            name "joint_l21"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "joint_l21_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.205500 0.060000 0.078000
+          rotation 0.627748 -0.460288 -0.627748 2.278848
+          children [
+            Shape {
+              appearance USE carbon
+              geometry DEF l21 Mesh {
+                url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/l21.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis -0.000002 -0.000007 1.000000
+                anchor -0.200000 0.000000 0.010000
+              }
+              device [
+                RotationalMotor {
+                  name "joint_l22"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "joint_l22_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation -0.200000 0.000000 0.010000
+                rotation 0.990510 -0.137439 0.000001 3.141600
+                children [
+                  Shape {
+                    appearance USE carbon
+                    geometry DEF l22 Mesh {
+                      url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/l22.STL"
+                    }
+                  }
+                ]
+                name "l22"
+                boundingObject USE l22
+                physics Physics {
+                  density -1
+                  mass 0.222360
+                  centerOfMass [ 0.145880 -0.000000 0.005000 ]
+                  inertiaMatrix [
+                    6.881700e-05 2.166400e-03 2.231500e-03
+                    3.905600e-06 1.472500e-18 -1.048700e-19
+                  ]
+                }
+              }
+            }
+          ]
+          name "l21"
+          boundingObject USE l21
+          physics Physics {
+            density -1
+            mass 0.168160
+            centerOfMass [ -0.096226 0.000069 -0.005000 ]
+            inertiaMatrix [
+              4.883900e-05 8.911000e-04 9.371400e-04
+              4.368000e-08 7.178400e-19 1.571800e-21
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 1.000000 0.000005 0.000004
+          anchor -0.195500 -0.250740 0.138140
+        }
+        device [
+          RotationalMotor {
+            name "joint_r11"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "joint_r11_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.195500 -0.250740 0.138140
+          rotation -0.627748 -0.460288 0.627748 2.278848
+          children [
+            Shape {
+              appearance USE carbon
+              geometry DEF r11 Mesh {
+                url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/r11.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 0.000000 1.000000
+                anchor 0.000000 0.000000 0.010000
+              }
+              device [
+                RotationalMotor {
+                  name "joint_r12"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "joint_r12_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.000000 0.010000
+                rotation 0.000000 0.000000 1.000000 0.275750
+                children [
+                  Shape {
+                    appearance USE carbon
+                    geometry DEF r12 Mesh {
+                      url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/r12.STL"
+                    }
+                  }
+                  Solid {
+                    translation 0.300000 0.000000 0.067000
+                    rotation -0.796568 0.604549 0.000002 3.141599
+                    children [
+                      Shape {
+                        appearance USE wheel_m
+                        geometry DEF wheel_r Mesh {
+                          url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/wheel_r.STL"
+                        }
+                      }
+                    ]
+                    name "wheel_r"
+                    boundingObject USE wheel_r
+                    physics Physics {
+                      density -1
+                      mass 1.464200
+                      centerOfMass [ 0.000002 -0.000025 0.024390 ]
+                      inertiaMatrix [
+                        2.606800e-03 2.609100e-03 4.859700e-03
+                        -4.489400e-07 -1.393000e-07 8.863700e-07
+                      ]
+                    }
+                  }
+                ]
+                name "r12"
+                boundingObject USE r12
+                physics Physics {
+                  density -1
+                  mass 0.222360
+                  centerOfMass [ 0.145880 0.000000 0.005000 ]
+                  inertiaMatrix [
+                    6.881700e-05 2.166400e-03 2.231500e-03
+                    3.905600e-06 -5.864600e-19 3.266000e-21
+                  ]
+                }
+              }
+            }
+          ]
+          name "r11"
+          boundingObject USE r11
+          physics Physics {
+            density -1
+            mass 0.168160
+            centerOfMass [ 0.103770 0.000069 0.005000 ]
+            inertiaMatrix [
+              4.883900e-05 8.911000e-04 9.371400e-04
+              4.368000e-08 2.610800e-19 1.393800e-20
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 1.000000 -0.000003 -0.000004
+          anchor -0.205500 0.060000 0.078000
+        }
+        device [
+          RotationalMotor {
+            name "joint_r21"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "joint_r21_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.205500 0.060000 0.078000
+          rotation -0.508985 0.694168 -0.508985 1.927996
+          children [
+            Shape {
+              appearance USE carbon
+              geometry DEF r21 Mesh {
+                url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/r21.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis -0.000002 0.000007 -1.000000
+                anchor -0.200000 0.000000 0.010000
+              }
+              device [
+                RotationalMotor {
+                  name "joint_r22"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "joint_r22_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation -0.200000 0.000000 0.010000
+                rotation 0.990510 0.137439 -0.000001 3.141600
+                children [
+                  Shape {
+                    appearance USE carbon
+                    geometry DEF r22 Mesh {
+                      url "F:/BaiduSyncdisk/personal/wewebot/Robot1229/meshes/r22.STL"
+                    }
+                  }
+                ]
+                name "r22"
+                boundingObject USE r22
+                physics Physics {
+                  density -1
+                  mass 0.222360
+                  centerOfMass [ 0.145880 0.000000 0.005000 ]
+                  inertiaMatrix [
+                    6.881700e-05 2.166400e-03 2.231500e-03
+                    3.905600e-06 -2.307200e-18 -7.743700e-20
+                  ]
+                }
+              }
+            }
+          ]
+          name "r21"
+          boundingObject USE r21
+          physics Physics {
+            density -1
+            mass 0.168160
+            centerOfMass [ -0.096226 0.000069 -0.005000 ]
+            inertiaMatrix [
+              4.883900e-05 8.911000e-04 9.371400e-04
+              4.368000e-08 5.318900e-19 -3.464500e-20
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject USE body
+    physics Physics {
+      density -1
+      mass 1.622800
+      centerOfMass [ -0.029083 0.030270 0.039855 ]
+      inertiaMatrix [
+        8.793500e-03 7.898800e-03 1.430200e-02
+        -4.871400e-05 8.497700e-05 -2.930200e-08
+      ]
+    }
+  }
+}
